@@ -7,7 +7,11 @@
 
 
     input{
-        @apply border  border-black p-4 focus:shadow-xl hover:border-blue-200 h-4 transition-all
+        @apply border  border-black p-4 focus:shadow-xl hover:border-blue-200 h-4 transition-all w-full
+    }
+
+    .input-error{
+        @apply mt-2 text-sm underline text-red-500
     }
 
     button {
