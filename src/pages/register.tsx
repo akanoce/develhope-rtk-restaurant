@@ -22,7 +22,6 @@ export default function Register() {
             try {
                 const result = await runRegistration({ email: email, password: password }).unwrap()
                 navigate('/login')
-
             }
             catch (e: any) {
                 console.error(e)
@@ -31,9 +30,9 @@ export default function Register() {
     }
 
     return (
-        <div className='flex items-center justify-center h-screen'>
-            <form className="p-4 flex  flex-col items-center justify-center border border-black rounded-sm">
-                <h1>Registrazione</h1>
+        <div className='flex items-center justify-center h-screen'  >
+            <form onSubmit={(e) => { e.preventDefault(); handleRegistration(); }} className="p-4 flex  flex-col items-center justify-center border border-black rounded-sm">
+                <h1 className="font-bold text-lg">Registrazione</h1>
                 <div className="mt-4 flex flex-col items-start">
                     <label htmlFor='email'>Email</label>
                     <input name='email' type='text' value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -42,7 +41,7 @@ export default function Register() {
                     <label htmlFor='password'>Password</label>
                     <input name='password' type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <button className='mt-4' disabled={isButtonDisabled} type='button' onClick={() => handleRegistration()} >Registrati</button>
+                <button className='mt-4' disabled={isButtonDisabled} type='submit' >Registrati</button>
             </form>
         </div>
     )
