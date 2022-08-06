@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+
+
+    input{
+        @apply border  border-black p-4 focus:shadow-xl hover:border-blue-200 h-4 transition-all
+    }
+
+    button {
+        @apply p-4 disabled:bg-slate-300 bg-blue-500 text-white border rounded hover:bg-white hover:border-black hover:text-blue-500 cursor-pointer transition-all
+    }
+
+    label{
+        @apply mb-2 underline
+    }
+
+}
