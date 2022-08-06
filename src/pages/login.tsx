@@ -44,7 +44,7 @@ export default function Login() {
                     <label htmlFor='password'>Password</label>
                     <input name='password' type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <button className='mt-4' disabled={isButtonDisabled} type='submit'  >Login</button>
+                <button className='mt-4 btn' disabled={isButtonDisabled} type='submit'  >Login</button>
             </form>
         </div>
     )

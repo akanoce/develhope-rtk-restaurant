@@ -41,7 +41,7 @@ export default function Register() {
                     <label htmlFor='password'>Password</label>
                     <input name='password' type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <button className='mt-4' disabled={isButtonDisabled} type='submit' >Registrati</button>
+                <button className='mt-4 btn' disabled={isButtonDisabled} type='submit' >Registrati</button>
             </form>
         </div>
     )
