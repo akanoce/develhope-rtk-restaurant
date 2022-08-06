@@ -6,7 +6,7 @@ import { addToCart, selectRestaurant } from "../../redux/slice/restaurantSlice"
 import { useNavigate } from 'react-router-dom'
 import { CategoryModel, MenuModel } from "../../types"
 import { Dialog, Transition } from '@headlessui/react'
-import { ShoppingCartIcon } from '@heroicons/react/solid'
+import { ShoppingCartIcon, PlusIcon, MinusIcon } from '@heroicons/react/solid'
 
 export default function Menu() {
 
@@ -99,10 +99,13 @@ function AddToCart({ product, closeModal, addToCart }: { product: MenuModel, clo
                                     <span>Aggiungi {product.name}</span>
                                     <h5 className='text-white bg-green-500 p-1 rounded' >{product.price}€</h5>
                                 </Dialog.Title>
-                                <div className="mt-2 flex flex-col justify-start">
+                                <div className="my-4 flex flex-col justify-start">
                                     <label htmlFor="qty">Quantità</label>
-                                    <input type='number' value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} />
-
+                                    <div className="flex items-center justify-between ">
+                                        <button className="btn" disabled={quantity <= 0} onClick={() => quantity > 0 && setQuantity(quantity - 1)}><MinusIcon className="w-5 h-5" /></button>
+                                        <input className='w-1/2 text-center' type='number' value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} />
+                                        <button className="btn" onClick={() => setQuantity(quantity + 1)} ><PlusIcon className="w-5 h-5" /></button>
+                                    </div>
                                 </div>
 
                                 <div className="mt-4 flex justify-between items-center">
