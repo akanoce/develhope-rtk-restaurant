@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { CategoryModel, MenuModel, OrderItem, OrderModel } from '../../types'
+import { CategoryModel, MenuModel, OrderItemModel, OrderModel } from '../../types'
 import { RootState } from '../store'
 
 export type RestaurantSliceModel = {
     menu: MenuModel[],
     categories: CategoryModel[],
     orders: OrderModel[],
-    cart: OrderItem[]
+    cart: OrderItemModel[]
 
 }
 const restaurantSlice = createSlice({
@@ -18,7 +18,7 @@ const restaurantSlice = createSlice({
                 ...state, ...action.payload
             }
         },
-        addToCart: (state, action: PayloadAction<OrderItem>) => {
+        addToCart: (state, action: PayloadAction<OrderItemModel>) => {
             return { ...state, cart: [...state.cart, action.payload] }
         }
     }

@@ -1,4 +1,4 @@
-import { CategoryModel, LoginResponse, MenuModel, OrderItem, OrderModel } from "../../types"
+import { CategoryModel, LoginResponse, MenuModel, OrderItemModel, OrderModel } from "../../types"
 import { apiSlice } from "./baseApiSlice"
 
 
@@ -34,12 +34,20 @@ export const menuApi = apiSlice.injectEndpoints({
                 }
             },
         }),
-        createOrder: builder.mutation<OrderModel, OrderItem[]>({
+        createOrder: builder.mutation<OrderModel, { products: OrderItemModel[] }>({
             query: (data) => {
                 return {
                     url: 'orders',
                     method: 'POST',
-                    body: data
+                    body: { ...data, status: 'pending' }
+                }
+            },
+        }),
+        deleteOrder: builder.mutation<{}, { id: number }>({
+            query: ({ id }) => {
+                return {
+                    url: `orders/${id}`,
+                    method: 'DELETE',
                 }
             },
         }),
@@ -48,4 +56,4 @@ export const menuApi = apiSlice.injectEndpoints({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetMenuQuery, useLazyGetMenuQuery, useLazyGetMenuCategoriesQuery, useLazyGetOrdersQuery, useCreateOrderMutation } = menuApi
+export const { useGetMenuQuery, useLazyGetMenuQuery, useLazyGetMenuCategoriesQuery, useLazyGetOrdersQuery, useCreateOrderMutation, useDeleteOrderMutation } = menuApi

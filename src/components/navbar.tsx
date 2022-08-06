@@ -69,7 +69,7 @@ export function CartModal({ restaurant, cartTotal, isOpen, closeModal }: { resta
     async function handleConfirmOrder() {
 
         try {
-            const newOrder = await createOrder(restaurant.cart).unwrap()
+            const newOrder = await createOrder({ products: restaurant.cart }).unwrap()
             dispatch(setRestaurant({ cart: [], orders: [...restaurant.orders, newOrder] }))
             closeModal()
         }

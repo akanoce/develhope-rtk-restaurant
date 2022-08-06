@@ -85,48 +85,6 @@
   ],
   "orders": [
     {
-      "products": [
-        {
-          "productId": 1,
-          "qty": 3
-        },
-        {
-          "productId": 6,
-          "qty": 3
-        }
-      ],
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "products": [
-        {
-          "productId": 1,
-          "qty": 3
-        },
-        {
-          "productId": 6,
-          "qty": 3
-        }
-      ],
-      "id": 2
-    },
-    {
-      "userId": 1,
-      "status": 0,
-      "products": [
-        {
-          "productId": 1,
-          "qty": 3
-        },
-        {
-          "productId": 6,
-          "qty": 3
-        }
-      ],
-      "id": 3
-    },
-    {
       "userId": 1,
       "status": 0,
       "products": [
@@ -186,19 +144,28 @@
       ],
       "id": 7
     },
-    [
-      {
-        "productId": 2,
-        "qty": 1
-      },
-      {
-        "productId": 3,
-        "qty": 1
-      },
-      {
-        "productId": 1,
-        "qty": 1
-      }
-    ]
+    {
+      "products": [
+        {
+          "productId": 1,
+          "qty": 1
+        }
+      ],
+      "id": 8
+    },
+    {
+      "products": [
+        {
+          "productId": 1,
+          "qty": 2
+        },
+        {
+          "productId": 3,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "id": 9
+    }
   ]
 }

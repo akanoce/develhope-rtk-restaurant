@@ -21,11 +21,11 @@ export type CategoryModel = {
 }
 
 export type OrderModel = {
-    products: OrderItem[]
+    products: OrderItemModel[]
     id: number
 }
 
-export type OrderItem = {
+export type OrderItemModel = {
     productId: number,
     qty: number
 }
